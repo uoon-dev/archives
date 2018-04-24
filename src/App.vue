@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <p>
-      Styled with a little sass!
-    </p>
     <router-view/>
   </div>
 </template>
@@ -15,4 +11,9 @@ export default {
 </script>
 
 <style lang="scss">
+body, html, #app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
 </style>
