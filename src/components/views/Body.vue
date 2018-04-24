@@ -64,7 +64,7 @@ export default {
   }
 
   .left-side {
-    width: 246px;
+    width: 286px;
     height: 100%;
   }
 }
