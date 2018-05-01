@@ -1,29 +1,42 @@
 <template>
   <nav id="side-menu">
-    <div class="col-1">
-    </div>
-    <div class="col-2">
-      <div class="art">
-        <img src="../../assets/character.png" alt="">
+      <div class="col-1">
       </div>
-      <ul class="nav nav-pills">
-          <router-link to="/uoon" active-class="active" tag="li" class="intro" exact>
-            <a class="main-category">Uoon
-              <div>- introduce</div>
-            </a>
-          </router-link>
-          <ul class="web">
-            <div class="main-category">Web</div>
-            <router-link to="/frontend" active-class="active" tag="li"><a>- Frontend</a></router-link>
-            <router-link to="/backend" active-class="active" tag="li"><a>- Backend</a></router-link>
-          </ul>
-          <router-link to="/diary" active-class="active" tag="li" class="diary"><a class="main-category">Diary</a></router-link>
-      </ul>
-    </div>
+      <div class="col-2">
+        <div class="art">
+          <img src="../../assets/character.png" alt="">
+        </div>
+        <ul class="nav nav-pills">
+            <router-link to="/uoon" active-class="active" tag="li" class="intro" exact>
+              <a class="main-category">Uoon
+                <div>- introduce</div>
+              </a>
+            </router-link>
+            <ul class="web">
+              <div class="main-category">Web</div>
+              <router-link to="/frontend" active-class="active" tag="li"><a>- Frontend</a></router-link>
+              <router-link to="/backend" active-class="active" tag="li"><a>- Backend</a></router-link>
+            </ul>
+            <router-link to="/diary" active-class="active" tag="li" class="diary"><a class="main-category">Diary</a></router-link>
+        </ul>
+      </div>
   </nav>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
+export default {
+  data () {
+    return {
+    }
+  },
+  computed: {
+    ...mapGetters({
+      loading: 'loading'
+    })
+  }
+}
 </script>
 
 <style lang="scss">
@@ -40,7 +53,9 @@
     top: 0;
     width: 28%;
     height: 100%;
+    overflow: hidden;
     background: $primary-color;
+    animation: slide-down 1.5s ease-in-out forwards;
   }
 
   .col-2 {
@@ -48,9 +63,11 @@
     right: 10px;
     width: 70%;
     height: 100%;
-    background: $primary-color;
-    opacity: 0.9;
+    overflow: hidden;
+    background: $secondary-color;
+    opacity: 1;
     margin-left: -5px;
+    animation: slide-down 1.7s ease-in forwards;
     .art {
       text-align: center;
       position: relative;
@@ -96,4 +113,15 @@
     }
   }
 }
+
+@keyframes slide-down {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
 </style>
