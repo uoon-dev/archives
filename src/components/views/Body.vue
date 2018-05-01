@@ -15,7 +15,7 @@
         <div class="center-emotion" v-show="!loading">
           <canvas id="canvas"></canvas>
           <video id="video" preload="none" autoplay="autoplay" loop>
-            <source src="../../assets/videos/Monument-Valley.mp4" type="video/mp4">
+            <source src="../../assets/videos/Monument Valley-Medium.mp4" type="video/mp4">
           </video>
         </div>
         <!-- </transition> -->
@@ -46,10 +46,10 @@ export default {
   },
   beforeMount () {
     let _draw = function (cvs, ctx, vid) {
-      let aspect = vid.videoHeight / vid.videoWidth;
-      let wantedWidth = 1280;
+      let aspect = vid.videoHeight / vid.videoWidth
+      let wantedWidth = 1280
       let height = Math.round(wantedWidth * aspect)
- 
+
       cvs.width = wantedWidth
       cvs.height = height
 
